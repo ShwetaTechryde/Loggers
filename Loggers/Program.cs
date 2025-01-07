@@ -1,5 +1,4 @@
 using Loggers;
-
 var builder = WebApplication.CreateBuilder(args);
 
 // Services ko add karein (agar required ho toh)
@@ -12,10 +11,7 @@ app.UseMiddleware<LoggingMiddleware>();
 
 // Baaki middlewares
 app.UseRouting();
+app.Map("/", () => "Response form here this is myntcompnafinal endpoint");
 
-app.UseEndpoints(endpoints =>
-{
-    endpoints.MapControllers(); // Ensure controllers are added in services
-});
 
 app.Run();
